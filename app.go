@@ -36,6 +36,6 @@ func main() {
 	http.HandleFunc("/headers", headers)
 	http.HandleFunc("/health", health)
 
-	http.ListenAndServeTLS(":9200", ".infra/ssl/riva.local.crt", ".infra/ssl/riva.local.key", nil)
+	http.ListenAndServeTLS(":9200", "ssl/riva.local.crt", "ssl/riva.local.key", nil)
 
 }
