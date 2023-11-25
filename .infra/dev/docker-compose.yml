@@ -1,0 +1,18 @@
+version: '3'
+services:
+  go-exp-service:
+    build:
+      context: ./docker
+    hostname: "go-exp-service"    
+    ports:
+        - "8100:8100"
+        - "7755:7755"
+    volumes:
+    - ../../:/app    
+    - .container/go/:/go
+    tty: true    
+    networks:
+      - dev                    
+networks:
+    dev:
+        driver: bridge        
